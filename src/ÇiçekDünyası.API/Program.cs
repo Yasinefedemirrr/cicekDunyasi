@@ -7,6 +7,7 @@ using ÇiçekDünyası.Infrastructure.Repositories;
 using ÇiçekDünyası.Application.Services;
 using ÇiçekDünyası.Domain.Interfaces;
 using ÇiçekDünyası.Application.Interfaces;
+using BCrypt.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,14 +16,24 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
+
 // Database
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-Console.WriteLine("KULLANILAN CONNECTION STRING: " + connectionString);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // JWT Configuration
-var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+var jwtSettings = builder.Configuration.GetSection("Jwt");
 var secretKey = jwtSettings["SecretKey"] ?? "your-super-secret-key-with-at-least-32-characters";
 var issuer = jwtSettings["Issuer"] ?? "ÇiçekDünyası";
 var audience = jwtSettings["Audience"] ?? "ÇiçekDünyası";
@@ -45,25 +56,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// CORS
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
-});
-
-// Dependency Injection
 // Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IFlowerRepository, FlowerRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 // Services
-builder.Services.AddScoped<JwtService>(provider => new JwtService(secretKey, issuer, audience));
+builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IFlowerService, FlowerService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
@@ -83,11 +82,32 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-// Ensure database is created
+// Seed admin user
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    var userRepository = scope.ServiceProvider.GetRequiredService<IUserRepository>();
+    
+    // Ensure database is created
     context.Database.EnsureCreated();
+    
+    // Check if admin user exists
+    var adminUser = await userRepository.GetByUsernameAsync("admin");
+    if (adminUser == null)
+    {
+        var admin = new ÇiçekDünyası.Domain.Entities.User
+        {
+            Username = "admin",
+            Email = "admin@cicekdunyasi.com",
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
+            Role = "Admin",
+            CreatedAt = DateTime.UtcNow,
+            IsActive = true
+        };
+        
+        await userRepository.AddAsync(admin);
+        Console.WriteLine("Admin user created successfully");
+    }
 }
 
 app.Run();

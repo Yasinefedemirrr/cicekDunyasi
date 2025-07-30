@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using ÇiçekDünyası.Domain.Entities;
+using Microsoft.Extensions.Configuration;
 
 namespace ÇiçekDünyası.Application.Services
 {
@@ -12,11 +13,11 @@ namespace ÇiçekDünyası.Application.Services
         private readonly string _issuer;
         private readonly string _audience;
 
-        public JwtService(string secretKey, string issuer, string audience)
+        public JwtService(IConfiguration configuration)
         {
-            _secretKey = secretKey;
-            _issuer = issuer;
-            _audience = audience;
+            _secretKey = configuration["Jwt:SecretKey"] ?? "your-super-secret-key-with-at-least-32-characters";
+            _issuer = configuration["Jwt:Issuer"] ?? "cicekdunyasi";
+            _audience = configuration["Jwt:Audience"] ?? "cicekdunyasi-users";
         }
 
         public string GenerateToken(User user)

@@ -16,7 +16,7 @@ namespace ÇiçekDünyası.Domain.Entities
         [Required]
         public decimal Price { get; set; }
         
-        [StringLength(200)]
+        [StringLength(4000)]
         public string ImageUrl { get; set; } = string.Empty;
         
         public int StockQuantity { get; set; }
