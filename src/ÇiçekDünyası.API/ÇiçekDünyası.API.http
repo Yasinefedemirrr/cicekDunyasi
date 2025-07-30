@@ -1,0 +1,6 @@
+@ÇiçekDünyası.API_HostAddress = http://localhost:5140
+
+GET {{ÇiçekDünyası.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

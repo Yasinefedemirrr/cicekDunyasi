@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ÇiçekDünyası.API.props" />
+</Project>

@@ -1,0 +1,157 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{45C3D30D-980A-42B7-B07F-E1B89059502A}|\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API.csproj|c:\\users\\90545\\source\\vscrepos\\\u00E7i\u00E7ekd\u00FCnyas\u0131\\src\\\u00E7i\u00E7ekd\u00FCnyas\u0131.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C3D30D-980A-42B7-B07F-E1B89059502A}|\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API.csproj|solutionrelative:\u00E7i\u00E7ekd\u00FCnyas\u0131.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A8FE52A-B97E-44C8-A179-C6EEF07171B3}|\u00C7i\u00E7ekD\u00FCnyas\u0131.Domain\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Domain.csproj|c:\\users\\90545\\source\\vscrepos\\\u00E7i\u00E7ekd\u00FCnyas\u0131\\src\\\u00E7i\u00E7ekd\u00FCnyas\u0131.domain\\entities\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A8FE52A-B97E-44C8-A179-C6EEF07171B3}|\u00C7i\u00E7ekD\u00FCnyas\u0131.Domain\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Domain.csproj|solutionrelative:\u00E7i\u00E7ekd\u00FCnyas\u0131.domain\\entities\\flower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C3D30D-980A-42B7-B07F-E1B89059502A}|\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API.csproj|c:\\users\\90545\\source\\vscrepos\\\u00E7i\u00E7ekd\u00FCnyas\u0131\\src\\\u00E7i\u00E7ekd\u00FCnyas\u0131.api\\controllers\\flowerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C3D30D-980A-42B7-B07F-E1B89059502A}|\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API.csproj|solutionrelative:\u00E7i\u00E7ekd\u00FCnyas\u0131.api\\controllers\\flowerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C3D30D-980A-42B7-B07F-E1B89059502A}|\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API.csproj|c:\\users\\90545\\source\\vscrepos\\\u00E7i\u00E7ekd\u00FCnyas\u0131\\src\\\u00E7i\u00E7ekd\u00FCnyas\u0131.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C3D30D-980A-42B7-B07F-E1B89059502A}|\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API.csproj|solutionrelative:\u00E7i\u00E7ekd\u00FCnyas\u0131.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45C3D30D-980A-42B7-B07F-E1B89059502A}|\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API.csproj|c:\\users\\90545\\source\\vscrepos\\\u00E7i\u00E7ekd\u00FCnyas\u0131\\src\\\u00E7i\u00E7ekd\u00FCnyas\u0131.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45C3D30D-980A-42B7-B07F-E1B89059502A}|\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API.csproj|solutionrelative:\u00E7i\u00E7ekd\u00FCnyas\u0131.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8624171-8BB2-42CB-9CC4-5830CAF7B4D7}|\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Application.csproj|c:\\users\\90545\\source\\vscrepos\\\u00E7i\u00E7ekd\u00FCnyas\u0131\\src\\\u00E7i\u00E7ekd\u00FCnyas\u0131.application\\services\\flowerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8624171-8BB2-42CB-9CC4-5830CAF7B4D7}|\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Application.csproj|solutionrelative:\u00E7i\u00E7ekd\u00FCnyas\u0131.application\\services\\flowerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8624171-8BB2-42CB-9CC4-5830CAF7B4D7}|\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Application.csproj|c:\\users\\90545\\source\\vscrepos\\\u00E7i\u00E7ekd\u00FCnyas\u0131\\src\\\u00E7i\u00E7ekd\u00FCnyas\u0131.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8624171-8BB2-42CB-9CC4-5830CAF7B4D7}|\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Application.csproj|solutionrelative:\u00E7i\u00E7ekd\u00FCnyas\u0131.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Program.cs",
+              "RelativeDocumentMoniker": "\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Program.cs",
+              "ToolTip": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Program.cs",
+              "RelativeToolTip": "\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Program.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAASwE8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T13:32:44.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAwwCQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T12:14:01.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FlowersController.cs",
+              "DocumentMoniker": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\FlowersController.cs",
+              "RelativeDocumentMoniker": "\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\FlowersController.cs",
+              "ToolTip": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\FlowersController.cs",
+              "RelativeToolTip": "\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\FlowersController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T12:13:57.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Flower.cs",
+              "DocumentMoniker": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Domain\\Entities\\Flower.cs",
+              "RelativeDocumentMoniker": "\u00C7i\u00E7ekD\u00FCnyas\u0131.Domain\\Entities\\Flower.cs",
+              "ToolTip": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Domain\\Entities\\Flower.cs",
+              "RelativeToolTip": "\u00C7i\u00E7ekD\u00FCnyas\u0131.Domain\\Entities\\Flower.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T12:12:58.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FlowerService.cs",
+              "DocumentMoniker": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\Services\\FlowerService.cs",
+              "RelativeDocumentMoniker": "\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\Services\\FlowerService.cs",
+              "ToolTip": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\Services\\FlowerService.cs",
+              "RelativeToolTip": "\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\Services\\FlowerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T12:12:52.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\Class1.cs",
+              "RelativeDocumentMoniker": "\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\Class1.cs",
+              "ToolTip": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\Class1.cs",
+              "RelativeToolTip": "\u00C7i\u00E7ekD\u00FCnyas\u0131.Application\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T12:12:40.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\90545\\source\\vscRepos\\\u00C7i\u00E7ekD\u00FCnyas\u0131\\src\\\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "\u00C7i\u00E7ekD\u00FCnyas\u0131.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T12:12:34.989Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
