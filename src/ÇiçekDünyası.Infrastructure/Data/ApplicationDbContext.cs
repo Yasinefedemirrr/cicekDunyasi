@@ -75,9 +75,9 @@ namespace ÇiçekDünyası.Infrastructure.Data
                 Id = 1,
                 Username = "admin",
                 Email = "admin@cicekdunyasi.com",
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
+                PasswordHash = "$2a$11$C6UzMDM.H6dfI/f/IKcEeO5r1r5rQxQ3rFQxQwQwQwQwQwQwQwQwW",
                 Role = "Admin",
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc),
                 IsActive = true
             });
 
@@ -92,7 +92,7 @@ namespace ÇiçekDünyası.Infrastructure.Data
                     ImageUrl = "/images/red-rose.jpg",
                     StockQuantity = 100,
                     IsAvailable = true,
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc)
                 },
                 new Flower
                 {
@@ -103,7 +103,7 @@ namespace ÇiçekDünyası.Infrastructure.Data
                     ImageUrl = "/images/white-lily.jpg",
                     StockQuantity = 80,
                     IsAvailable = true,
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc)
                 },
                 new Flower
                 {
@@ -114,7 +114,7 @@ namespace ÇiçekDünyası.Infrastructure.Data
                     ImageUrl = "/images/yellow-daisy.jpg",
                     StockQuantity = 150,
                     IsAvailable = true,
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc)
                 },
                 new Flower
                 {
@@ -125,7 +125,7 @@ namespace ÇiçekDünyası.Infrastructure.Data
                     ImageUrl = "/images/purple-orchid.jpg",
                     StockQuantity = 60,
                     IsAvailable = true,
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc)
                 },
                 new Flower
                 {
@@ -136,7 +136,7 @@ namespace ÇiçekDünyası.Infrastructure.Data
                     ImageUrl = "/images/pink-carnation.jpg",
                     StockQuantity = 120,
                     IsAvailable = true,
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc)
                 }
             );
         }

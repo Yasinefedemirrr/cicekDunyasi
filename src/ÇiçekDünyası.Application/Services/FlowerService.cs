@@ -38,7 +38,7 @@ namespace ÇiçekDünyası.Application.Services
             {
                 Name = createFlowerDto.Name,
                 Description = createFlowerDto.Description,
-                Price = createFlowerDto.Price,
+                Price = (decimal)createFlowerDto.Price,
                 ImageUrl = createFlowerDto.ImageUrl,
                 StockQuantity = createFlowerDto.StockQuantity,
                 IsAvailable = true,
@@ -59,7 +59,7 @@ namespace ÇiçekDünyası.Application.Services
 
             flower.Name = updateFlowerDto.Name;
             flower.Description = updateFlowerDto.Description;
-            flower.Price = updateFlowerDto.Price;
+            flower.Price = (decimal)updateFlowerDto.Price;
             flower.ImageUrl = updateFlowerDto.ImageUrl;
             flower.StockQuantity = updateFlowerDto.StockQuantity;
             flower.IsAvailable = updateFlowerDto.IsAvailable;

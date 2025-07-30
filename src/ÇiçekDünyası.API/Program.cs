@@ -16,8 +16,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Database
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+Console.WriteLine("KULLANILAN CONNECTION STRING: " + connectionString);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(connectionString));
 
 // JWT Configuration
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");

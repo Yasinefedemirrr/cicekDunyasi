@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ÇiçekDünyası.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb9ba81b6df918c578fe4d0dc66583b04a14dfd9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ÇiçekDünyası.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ÇiçekDünyası.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
