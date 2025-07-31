@@ -72,10 +72,7 @@ const AppContent: React.FC = () => {
             <Route path="/register" element={<Register />} />
             <Route 
               path="/" 
-              element={
-                <PrivateRoute>
-                  <Home onContactClick={() => setContactOpen(true)} />
-                </PrivateRoute>
+              element={<Home onContactClick={() => setContactOpen(true)} />
               } 
             />
             <Route 
@@ -102,7 +99,7 @@ const AppContent: React.FC = () => {
                 </PrivateRoute>
               } 
             />
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
         </Box>
         <Footer onContactClick={() => setContactOpen(true)} />

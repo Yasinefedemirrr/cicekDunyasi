@@ -58,9 +58,11 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
               </Button>
             )}
             
-            <Button color="inherit" onClick={() => navigate('/orders')}>
-              Geçmiş Siparişlerim
-            </Button>
+            {user?.role !== 'Admin' && (
+              <Button color="inherit" onClick={() => navigate('/orders')}>
+                Geçmiş Siparişlerim
+              </Button>
+            )}
             
             <Button color="inherit" onClick={onContactClick}>
               İletişim

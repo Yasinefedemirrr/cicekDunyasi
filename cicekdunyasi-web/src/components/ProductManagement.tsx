@@ -23,7 +23,7 @@ import {
   Snackbar,
   Alert,
 } from '@mui/material';
-import { Add as AddIcon, Edit as EditIcon, Delete as DeleteIcon } from '@mui/icons-material';
+import { Add as AddIcon, Edit as EditIcon, Delete as DeleteIcon, CheckCircle as AvailableIcon, Cancel as UnavailableIcon } from '@mui/icons-material';
 import { flowersAPI } from '../services/api';
 import { Flower } from '../types';
 import SnackbarNotification from './SnackbarNotification';
@@ -171,6 +171,24 @@ const ProductManagement: React.FC = () => {
     }
   };
 
+  const handleStatusToggle = async (flower: Flower) => {
+    try {
+      await flowersAPI.updateStatus(flower.id, !flower.isAvailable);
+      setSnackbar({
+        open: true,
+        message: `Ürün durumu ${!flower.isAvailable ? 'Mevcut' : 'Tükendi'} olarak güncellendi!`,
+        severity: 'success',
+      });
+      fetchFlowers();
+    } catch (err: any) {
+      setSnackbar({
+        open: true,
+        message: err.response?.data?.message || 'Durum güncellenirken bir hata oluştu.',
+        severity: 'error',
+      });
+    }
+  };
+
   const handleCloseSnackbar = () => {
     setSnackbar({ ...snackbar, open: false });
   };
@@ -230,12 +248,22 @@ const ProductManagement: React.FC = () => {
                 <TableCell>₺{flower.price.toFixed(2)}</TableCell>
                 <TableCell>{flower.stockQuantity}</TableCell>
                 <TableCell>
-                  <Typography
-                    variant="body2"
-                    color={flower.isAvailable ? 'success.main' : 'error.main'}
-                  >
-                    {flower.isAvailable ? 'Mevcut' : 'Tükendi'}
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <Typography
+                      variant="body2"
+                      color={flower.isAvailable ? 'success.main' : 'error.main'}
+                    >
+                      {flower.isAvailable ? 'Mevcut' : 'Tükendi'}
+                    </Typography>
+                    <IconButton
+                      size="small"
+                      onClick={() => handleStatusToggle(flower)}
+                      color={flower.isAvailable ? 'success' : 'error'}
+                      title={flower.isAvailable ? 'Tükendi olarak işaretle' : 'Mevcut olarak işaretle'}
+                    >
+                      {flower.isAvailable ? <AvailableIcon /> : <UnavailableIcon />}
+                    </IconButton>
+                  </Box>
                 </TableCell>
                 <TableCell>
                   <IconButton

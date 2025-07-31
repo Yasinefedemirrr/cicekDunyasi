@@ -104,6 +104,15 @@ export const flowersAPI = {
       throw error;
     }
   },
+  updateStatus: async (id: number, isAvailable: boolean): Promise<Flower> => {
+    try {
+      const response = await api.put(`/flowers/${id}/status`, { isAvailable });
+      return response.data;
+    } catch (error) {
+      console.error('Update flower status API error:', error);
+      throw error;
+    }
+  },
   delete: async (id: number): Promise<void> => {
     try {
       const response = await api.delete(`/flowers/${id}`);
