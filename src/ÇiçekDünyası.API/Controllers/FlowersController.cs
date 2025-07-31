@@ -110,5 +110,20 @@ namespace ÇiçekDünyası.API.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        [HttpPut("{id}/status")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<FlowerDto>> UpdateFlowerStatus(int id, [FromBody] UpdateFlowerStatusDto statusDto)
+        {
+            try
+            {
+                var result = await _flowerService.UpdateStatusAsync(id, statusDto.IsAvailable);
+                return Ok(result);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 } 
