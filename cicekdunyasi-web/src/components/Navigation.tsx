@@ -12,7 +12,11 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
 
-const Navigation: React.FC = () => {
+interface NavigationProps {
+  onContactClick?: () => void;
+}
+
+const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
   const { user, logout, isAuthenticated } = useAuth();
   const { getTotalItems } = useCart();
   const navigate = useNavigate();
@@ -58,6 +62,10 @@ const Navigation: React.FC = () => {
               Geçmiş Siparişlerim
             </Button>
             
+            <Button color="inherit" onClick={onContactClick}>
+              İletişim
+            </Button>
+            
             <Button color="inherit" onClick={handleCartClick}>
               <Badge badgeContent={getTotalItems()} color="error">
                 <CartIcon />
@@ -74,6 +82,9 @@ const Navigation: React.FC = () => {
           </Box>
         ) : (
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <Button color="inherit" onClick={onContactClick}>
+              İletişim
+            </Button>
             <Button color="inherit" onClick={() => navigate('/login')}>
               Giriş Yap
             </Button>

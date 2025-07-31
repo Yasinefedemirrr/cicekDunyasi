@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LoginRequest, LoginResponse, Flower, Order, CreateOrderRequest } from '../types';
+import { LoginRequest, LoginResponse, Flower, Order, CreateOrderRequest, Contact, CreateContactRequest } from '../types';
 
 const API_BASE_URL = 'http://localhost:5140/api';
 
@@ -158,6 +158,45 @@ export const ordersAPI = {
       return response.data;
     } catch (error) {
       console.error('Update order status API error:', error);
+      throw error;
+    }
+  },
+};
+
+export const contactAPI = {
+  getAll: async (): Promise<Contact[]> => {
+    try {
+      const response = await api.get('/contacts');
+      return response.data;
+    } catch (error) {
+      console.error('Get contacts API error:', error);
+      throw error;
+    }
+  },
+  create: async (contact: CreateContactRequest): Promise<Contact> => {
+    try {
+      const response = await api.post('/contacts', contact);
+      return response.data;
+    } catch (error) {
+      console.error('Create contact API error:', error);
+      throw error;
+    }
+  },
+  markAsRead: async (id: number): Promise<Contact> => {
+    try {
+      const response = await api.put(`/contacts/${id}/read`);
+      return response.data;
+    } catch (error) {
+      console.error('Mark contact as read API error:', error);
+      throw error;
+    }
+  },
+  delete: async (id: number): Promise<void> => {
+    try {
+      const response = await api.delete(`/contacts/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error('Delete contact API error:', error);
       throw error;
     }
   },

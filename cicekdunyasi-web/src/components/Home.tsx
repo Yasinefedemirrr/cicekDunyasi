@@ -21,7 +21,11 @@ import { flowersAPI } from '../services/api';
 import { Flower } from '../types';
 import SnackbarNotification from './SnackbarNotification';
 
-const Home: React.FC = () => {
+interface HomeProps {
+  onContactClick?: () => void;
+}
+
+const Home: React.FC<HomeProps> = ({ onContactClick }) => {
   const [flowers, setFlowers] = useState<Flower[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -300,7 +304,7 @@ const Home: React.FC = () => {
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
                   Sorularınız için bize mesaj gönderebilirsiniz. En kısa sürede size dönüş yapacağız.
                 </Typography>
-                <Button variant="contained" fullWidth size="large">
+                <Button variant="contained" fullWidth size="large" onClick={onContactClick}>
                   İletişim Formu
                 </Button>
               </Paper>

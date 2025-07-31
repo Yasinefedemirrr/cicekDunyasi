@@ -19,7 +19,11 @@ import {
   LocationOn,
 } from '@mui/icons-material';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onContactClick?: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onContactClick }) => {
   return (
     <Box
       component="footer"
@@ -33,7 +37,7 @@ const Footer: React.FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           {/* Company Info */}
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={3}>
             <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold' }}>
               Çiçek Dünyası
             </Typography>
@@ -72,7 +76,7 @@ const Footer: React.FC = () => {
               <Link href="/cart" color="inherit" underline="hover">
                 Sepet
               </Link>
-              <Link href="/contact" color="inherit" underline="hover">
+              <Link href="#" color="inherit" underline="hover" onClick={onContactClick}>
                 İletişim
               </Link>
             </Stack>
@@ -100,7 +104,7 @@ const Footer: React.FC = () => {
           </Grid>
 
           {/* Contact Info */}
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={2}>
             <Typography variant="h6" gutterBottom>
               İletişim Bilgileri
             </Typography>
@@ -125,6 +129,32 @@ const Footer: React.FC = () => {
                 </Typography>
               </Box>
             </Stack>
+          </Grid>
+
+          {/* Contact Button */}
+          <Grid item xs={12} md={3}>
+            <Typography variant="h6" gutterBottom>
+              Bizimle İletişime Geçin
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <button
+                style={{
+                  width: '100%',
+                  padding: '12px',
+                  background: 'white',
+                  color: '#388e3c',
+                  border: 'none',
+                  borderRadius: 4,
+                  fontWeight: 'bold',
+                  fontSize: 16,
+                  cursor: 'pointer',
+                  transition: 'background 0.2s',
+                }}
+                onClick={onContactClick}
+              >
+                İLETİŞİM FORMU
+              </button>
+            </Box>
           </Grid>
         </Grid>
 

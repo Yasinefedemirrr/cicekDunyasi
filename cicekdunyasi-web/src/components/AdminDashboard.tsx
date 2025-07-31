@@ -33,6 +33,7 @@ import { ordersAPI } from '../services/api';
 import { Order } from '../types';
 import SnackbarNotification from './SnackbarNotification';
 import ProductManagement from './ProductManagement';
+import ContactManagement from './ContactManagement';
 
 const AdminDashboard: React.FC = () => {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -147,9 +148,70 @@ const AdminDashboard: React.FC = () => {
     );
   }
 
+  const activeOrders = orders.filter(order => order.status !== 'Delivered');
+  const deliveredOrders = orders.filter(order => order.status === 'Delivered');
   const totalOrders = orders.length;
   const pendingOrders = orders.filter(order => order.status === 'Pending').length;
   const totalRevenue = orders.reduce((sum, order) => sum + order.totalAmount, 0);
+
+  const renderOrdersTable = (orderList: Order[], title: string) => (
+    <>
+      <Typography variant="h5" gutterBottom>
+        {title}
+      </Typography>
+      
+      <TableContainer component={Paper}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Sipariş No</TableCell>
+              <TableCell>Müşteri</TableCell>
+              <TableCell>Telefon</TableCell>
+              <TableCell>Adres</TableCell>
+              <TableCell>Tutar</TableCell>
+              <TableCell>Durum</TableCell>
+              <TableCell>Tarih</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {orderList.map((order) => (
+              <TableRow key={order.id}>
+                <TableCell>#{order.id}</TableCell>
+                <TableCell>{order.customerName}</TableCell>
+                <TableCell>{order.phoneNumber}</TableCell>
+                <TableCell>
+                  <Typography variant="body2" sx={{ maxWidth: 200, overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    {order.deliveryAddress}
+                  </Typography>
+                </TableCell>
+                <TableCell>₺{order.totalAmount.toFixed(2)}</TableCell>
+                <TableCell>
+                  <Chip
+                    label={getStatusText(order.status)}
+                    color={getStatusColor(order.status) as any}
+                    size="small"
+                    onClick={() => handleStatusClick(order)}
+                    sx={{ cursor: 'pointer' }}
+                  />
+                </TableCell>
+                <TableCell>
+                  {new Date(order.orderDate).toLocaleDateString('tr-TR')}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+      {orderList.length === 0 && (
+        <Box textAlign="center" sx={{ mt: 4 }}>
+          <Typography variant="h6" color="textSecondary">
+            {title === 'Aktif Siparişler' ? 'Henüz aktif sipariş bulunmuyor.' : 'Henüz teslim edilen sipariş bulunmuyor.'}
+          </Typography>
+        </Box>
+      )}
+    </>
+  );
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
@@ -161,6 +223,8 @@ const AdminDashboard: React.FC = () => {
       <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}>
         <Tabs value={activeTab} onChange={handleTabChange}>
           <Tab label="Siparişler" />
+          <Tab label="Teslim Edilen Siparişler" />
+          <Tab label="İletişim Mesajları" />
           <Tab label="Ürün Yönetimi" />
         </Tabs>
       </Box>
@@ -207,65 +271,19 @@ const AdminDashboard: React.FC = () => {
             </Grid>
           </Grid>
 
-          {/* Orders Table */}
-          <Typography variant="h5" gutterBottom>
-            Siparişler
-          </Typography>
-          
-          <TableContainer component={Paper}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Sipariş No</TableCell>
-                  <TableCell>Müşteri</TableCell>
-                  <TableCell>Telefon</TableCell>
-                  <TableCell>Adres</TableCell>
-                  <TableCell>Tutar</TableCell>
-                  <TableCell>Durum</TableCell>
-                  <TableCell>Tarih</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {orders.map((order) => (
-                  <TableRow key={order.id}>
-                    <TableCell>#{order.id}</TableCell>
-                    <TableCell>{order.customerName}</TableCell>
-                    <TableCell>{order.phoneNumber}</TableCell>
-                    <TableCell>
-                      <Typography variant="body2" sx={{ maxWidth: 200, overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        {order.deliveryAddress}
-                      </Typography>
-                    </TableCell>
-                    <TableCell>₺{order.totalAmount.toFixed(2)}</TableCell>
-                    <TableCell>
-                      <Chip
-                        label={getStatusText(order.status)}
-                        color={getStatusColor(order.status) as any}
-                        size="small"
-                        onClick={() => handleStatusClick(order)}
-                        sx={{ cursor: 'pointer' }}
-                      />
-                    </TableCell>
-                    <TableCell>
-                      {new Date(order.orderDate).toLocaleDateString('tr-TR')}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-
-          {orders.length === 0 && (
-            <Box textAlign="center" sx={{ mt: 4 }}>
-              <Typography variant="h6" color="textSecondary">
-                Henüz sipariş bulunmuyor.
-              </Typography>
-            </Box>
-          )}
+          {renderOrdersTable(activeOrders, 'Aktif Siparişler')}
         </>
       )}
 
       {activeTab === 1 && (
+        renderOrdersTable(deliveredOrders, 'Teslim Edilen Siparişler')
+      )}
+
+      {activeTab === 2 && (
+        <ContactManagement />
+      )}
+
+      {activeTab === 3 && (
         <ProductManagement />
       )}
 

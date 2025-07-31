@@ -68,4 +68,21 @@ export interface CreateOrderItemRequest {
 export interface CartItem {
   flower: Flower;
   quantity: number;
+}
+
+export interface Contact {
+  id: number;
+  fullName: string;
+  phoneNumber: string;
+  email: string;
+  notes?: string;
+  createdAt: string;
+  isRead: boolean;
+}
+
+export interface CreateContactRequest {
+  fullName: string;
+  phoneNumber: string;
+  email: string;
+  notes?: string;
 } 

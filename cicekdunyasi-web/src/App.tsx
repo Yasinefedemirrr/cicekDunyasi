@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline, Box, CircularProgress } from '@mui/material';
@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
 import Cart from './components/Cart';
+import Contact from './components/Contact';
 import AdminDashboard from './components/AdminDashboard';
 import OrderHistory from './components/OrderHistory';
 
@@ -51,6 +52,7 @@ const PrivateRoute: React.FC<{ children: React.ReactNode; adminOnly?: boolean }>
 
 const AppContent: React.FC = () => {
   const { loading } = useAuth();
+  const [contactOpen, setContactOpen] = useState(false);
 
   if (loading) {
     return (
@@ -63,7 +65,7 @@ const AppContent: React.FC = () => {
   return (
     <Router>
       <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <Navigation />
+        <Navigation onContactClick={() => setContactOpen(true)} />
         <Box component="main" sx={{ flexGrow: 1 }}>
           <Routes>
             <Route path="/login" element={<Login />} />
@@ -72,7 +74,7 @@ const AppContent: React.FC = () => {
               path="/" 
               element={
                 <PrivateRoute>
-                  <Home />
+                  <Home onContactClick={() => setContactOpen(true)} />
                 </PrivateRoute>
               } 
             />
@@ -103,7 +105,8 @@ const AppContent: React.FC = () => {
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Box>
-        <Footer />
+        <Footer onContactClick={() => setContactOpen(true)} />
+        <Contact open={contactOpen} onClose={() => setContactOpen(false)} />
       </Box>
     </Router>
   );
