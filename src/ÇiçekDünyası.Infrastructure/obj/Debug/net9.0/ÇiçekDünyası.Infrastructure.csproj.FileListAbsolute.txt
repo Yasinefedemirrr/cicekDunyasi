@@ -11,10 +11,10 @@ C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastruct
 C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\ÇiçekDünyası.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\ÇiçekDünyası.Infrastructure.AssemblyInfo.cs
 C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\ÇiçekDünyası.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\ÇiçekDünyası.Infrastructure.sourcelink.json
 C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\_i_ekD_n.48F90BD6.Up2Date
 C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\ÇiçekDünyası.Infrastructure.dll
 C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\refint\ÇiçekDünyası.Infrastructure.dll
 C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\ÇiçekDünyası.Infrastructure.pdb
 C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\ÇiçekDünyası.Infrastructure.genruntimeconfig.cache
 C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\ref\ÇiçekDünyası.Infrastructure.dll
-C:\Users\90545\source\vscRepos\ÇiçekDünyası\src\ÇiçekDünyası.Infrastructure\obj\Debug\net9.0\ÇiçekDünyası.Infrastructure.sourcelink.json

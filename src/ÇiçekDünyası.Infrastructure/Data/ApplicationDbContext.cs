@@ -13,6 +13,7 @@ namespace ÇiçekDünyası.Infrastructure.Data
         public DbSet<Flower> Flowers { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -61,6 +62,18 @@ namespace ÇiçekDünyası.Infrastructure.Data
                 entity.Property(e => e.TotalPrice).HasColumnType("decimal(18,2)");
                 entity.HasOne(e => e.Order).WithMany(e => e.OrderItems).HasForeignKey(e => e.OrderId);
                 entity.HasOne(e => e.Flower).WithMany(e => e.OrderItems).HasForeignKey(e => e.FlowerId);
+            });
+
+            // Contact configuration
+            modelBuilder.Entity<Contact>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.FullName).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.PhoneNumber).IsRequired().HasMaxLength(20);
+                entity.Property(e => e.Email).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Notes).HasMaxLength(1000);
+                entity.Property(e => e.CreatedAt).IsRequired();
+                entity.Property(e => e.IsRead).IsRequired();
             });
 
             // Seed data
