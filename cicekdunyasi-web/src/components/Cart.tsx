@@ -155,14 +155,14 @@ const Cart: React.FC = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} md={8}>
           {items.map((item) => (
-            <Card key={item.flower.id} sx={{ mb: 2 }}>
+            <Card key={item.flower.id} sx={{ mb: 2, p: 1, borderRadius: 2, boxShadow: 3 }}>
               <CardContent>
                 <Grid container spacing={2} alignItems="center">
                   <Grid item xs={12} sm={3}>
                     <img
                       src={item.flower.imageUrl || 'https://via.placeholder.com/100x100?text=Çiçek'}
                       alt={item.flower.name}
-                      style={{ width: '100%', height: 'auto', maxWidth: '100px' }}
+                      style={{ width: '100%', height: 'auto', maxWidth: '100px', borderRadius: 8 }}
                     />
                   </Grid>
                   <Grid item xs={12} sm={4}>
@@ -172,34 +172,30 @@ const Cart: React.FC = () => {
                     </Typography>
                   </Grid>
                   <Grid item xs={12} sm={3}>
-                    <Box display="flex" alignItems="center">
+                    <Box display="flex" alignItems="center" justifyContent="flex-start" gap={1} sx={{ marginLeft: -4 }}>
                       <IconButton
                         onClick={() => handleQuantityChange(item.flower.id, item.quantity - 1)}
                         disabled={item.quantity <= 1}
+                        size="large"
+                        sx={{ border: '1px solid #eee', bgcolor: 'white', zIndex: 1 }}
                       >
-                        <RemoveIcon />
+                        <RemoveIcon fontSize="large" />
                       </IconButton>
-                      <TextField
-                        value={item.quantity}
-                        onChange={(e) => {
-                          const value = parseInt(e.target.value);
-                          if (!isNaN(value) && value > 0) {
-                            handleQuantityChange(item.flower.id, value);
-                          }
-                        }}
-                        sx={{ width: '60px', mx: 1 }}
-                        size="small"
-                      />
+                      <Typography variant="h5" sx={{ minWidth: 40, textAlign: 'center', fontWeight: 'bold', marginRight: 0.5 }}>
+                        {item.quantity}
+                      </Typography>
                       <IconButton
                         onClick={() => handleQuantityChange(item.flower.id, item.quantity + 1)}
                         disabled={item.quantity >= item.flower.stockQuantity}
+                        size="large"
+                        sx={{ border: '1px solid #eee', bgcolor: 'white', zIndex: 1 }}
                       >
-                        <AddIcon />
+                        <AddIcon fontSize="large" />
                       </IconButton>
                     </Box>
                   </Grid>
                   <Grid item xs={12} sm={2}>
-                    <Typography variant="h6" color="primary">
+                    <Typography variant="h6" color="primary" sx={{ fontWeight: 'bold', marginLeft: 2, zIndex: 10, position: 'relative' }}>
                       ₺{(item.flower.price * item.quantity).toFixed(2)}
                     </Typography>
                   </Grid>
@@ -218,16 +214,16 @@ const Cart: React.FC = () => {
         </Grid>
 
         <Grid item xs={12} md={4}>
-          <Card>
+          <Card sx={{ borderRadius: 2, boxShadow: 3 }}>
             <CardContent>
               <Typography variant="h6" gutterBottom>
                 Sipariş Özeti
               </Typography>
               <Box sx={{ mb: 2 }}>
                 <Typography variant="body1">
-                  Toplam Ürün: {items.length}
+                  Toplam Ürün: <b>{items.reduce((acc, item) => acc + item.quantity, 0)}</b>
                 </Typography>
-                <Typography variant="h5" color="primary" sx={{ mt: 1 }}>
+                <Typography variant="h5" color="primary" sx={{ mt: 1, fontWeight: 'bold' }}>
                   Toplam: ₺{getTotalPrice().toFixed(2)}
                 </Typography>
               </Box>
@@ -237,6 +233,7 @@ const Cart: React.FC = () => {
                 size="large"
                 onClick={handleCheckout}
                 disabled={loading}
+                sx={{ fontWeight: 'bold', py: 1.5 }}
               >
                 Sipariş Ver
               </Button>
