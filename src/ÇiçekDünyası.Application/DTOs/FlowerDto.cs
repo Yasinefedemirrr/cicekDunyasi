@@ -31,4 +31,9 @@ namespace ÇiçekDünyası.Application.DTOs
         public int StockQuantity { get; set; }
         public bool IsAvailable { get; set; }
     }
+
+    public class UpdateFlowerStatusDto
+    {
+        public bool IsAvailable { get; set; }
+    }
 } 

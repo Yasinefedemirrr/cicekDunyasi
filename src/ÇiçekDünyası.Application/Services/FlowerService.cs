@@ -94,6 +94,21 @@ namespace ÇiçekDünyası.Application.Services
             await _flowerRepository.UpdateStockAsync(id, quantity);
         }
 
+        public async Task<FlowerDto> UpdateStatusAsync(int id, bool isAvailable)
+        {
+            var flower = await _flowerRepository.GetByIdAsync(id);
+            if (flower == null)
+            {
+                throw new InvalidOperationException("Çiçek bulunamadı.");
+            }
+
+            flower.IsAvailable = isAvailable;
+            flower.UpdatedAt = DateTime.UtcNow;
+
+            var updatedFlower = await _flowerRepository.UpdateAsync(flower);
+            return MapToDto(updatedFlower);
+        }
+
         private static FlowerDto MapToDto(Flower flower)
         {
             return new FlowerDto
