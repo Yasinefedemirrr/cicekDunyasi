@@ -8,6 +8,8 @@ namespace ÇiçekDünyası.Domain.Entities
         
         public int FlowerId { get; set; }
         
+        public string FlowerName { get; set; } = string.Empty;
+        
         public int Quantity { get; set; }
         
         public decimal UnitPrice { get; set; }
