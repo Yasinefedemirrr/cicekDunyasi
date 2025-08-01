@@ -57,7 +57,7 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contacts", (string)null);
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("ÇiçekDünyası.Domain.Entities.Flower", b =>
@@ -100,7 +100,7 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Flowers", (string)null);
+                    b.ToTable("Flowers");
 
                     b.HasData(
                         new
@@ -207,7 +207,7 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("ÇiçekDünyası.Domain.Entities.OrderItem", b =>
@@ -220,6 +220,10 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
 
                     b.Property<int>("FlowerId")
                         .HasColumnType("int");
+
+                    b.Property<string>("FlowerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
@@ -239,7 +243,7 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderItems", (string)null);
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("ÇiçekDünyası.Domain.Entities.User", b =>
@@ -282,7 +286,7 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
                     b.HasIndex("Username")
                         .IsUnique();
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
 
                     b.HasData(
                         new

@@ -12,8 +12,8 @@ using ÇiçekDünyası.Infrastructure.Data;
 namespace ÇiçekDünyası.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250731091610_SyncContactModel")]
-    partial class SyncContactModel
+    [Migration("20250801082552_AddYasinAdmin")]
+    partial class AddYasinAdmin
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -224,6 +224,10 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
                     b.Property<int>("FlowerId")
                         .HasColumnType("int");
 
+                    b.Property<string>("FlowerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
@@ -297,6 +301,16 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
                             PasswordHash = "$2a$11$C6UzMDM.H6dfI/f/IKcEeO5r1r5rQxQ3rFQxQwQwQwQwQwQwQwQwW",
                             Role = "Admin",
                             Username = "admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Email = "yasin@cicekdunyasi.com",
+                            IsActive = true,
+                            PasswordHash = "$2a$11$C6UzMDM.H6dfI/f/IKcEeO5r1r5rQxQ3rFQxQwQwQwQwQwQwQwQwW",
+                            Role = "Admin",
+                            Username = "yasin"
                         });
                 });
 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ÇiçekDünyası.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d5fda988002dd5ac05db6455b28bba856289872")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+090cae6f33b33006fe1f6b4628abcd688e6f1872")]
 [assembly: System.Reflection.AssemblyProductAttribute("ÇiçekDünyası.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ÇiçekDünyası.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

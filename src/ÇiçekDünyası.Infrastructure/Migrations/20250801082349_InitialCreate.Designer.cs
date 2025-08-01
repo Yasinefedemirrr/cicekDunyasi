@@ -12,8 +12,8 @@ using ÇiçekDünyası.Infrastructure.Data;
 namespace ÇiçekDünyası.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250731092620_InitContactTable")]
-    partial class InitContactTable
+    [Migration("20250801082349_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -104,63 +104,6 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Flowers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Description = "Aşkın ve tutkunun simgesi kırmızı güller",
-                            ImageUrl = "/images/red-rose.jpg",
-                            IsAvailable = true,
-                            Name = "Kırmızı Gül",
-                            Price = 25.00m,
-                            StockQuantity = 100
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Description = "Saflık ve masumiyetin simgesi beyaz zambaklar",
-                            ImageUrl = "/images/white-lily.jpg",
-                            IsAvailable = true,
-                            Name = "Beyaz Lily",
-                            Price = 30.00m,
-                            StockQuantity = 80
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Description = "Neşe ve mutluluğun simgesi sarı papatyalar",
-                            ImageUrl = "/images/yellow-daisy.jpg",
-                            IsAvailable = true,
-                            Name = "Sarı Papatya",
-                            Price = 15.00m,
-                            StockQuantity = 150
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Description = "Zarafet ve güzelliğin simgesi mor orkideler",
-                            ImageUrl = "/images/purple-orchid.jpg",
-                            IsAvailable = true,
-                            Name = "Mor Orkide",
-                            Price = 45.00m,
-                            StockQuantity = 60
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Description = "Sevgi ve şefkatin simgesi pembe karanfiller",
-                            ImageUrl = "/images/pink-carnation.jpg",
-                            IsAvailable = true,
-                            Name = "Pembe Karanfil",
-                            Price = 20.00m,
-                            StockQuantity = 120
-                        });
                 });
 
             modelBuilder.Entity("ÇiçekDünyası.Domain.Entities.Order", b =>
@@ -224,6 +167,10 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
                     b.Property<int>("FlowerId")
                         .HasColumnType("int");
 
+                    b.Property<string>("FlowerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
@@ -286,18 +233,6 @@ namespace ÇiçekDünyası.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
-                            Email = "admin@cicekdunyasi.com",
-                            IsActive = true,
-                            PasswordHash = "$2a$11$C6UzMDM.H6dfI/f/IKcEeO5r1r5rQxQ3rFQxQwQwQwQwQwQwQwQwW",
-                            Role = "Admin",
-                            Username = "admin"
-                        });
                 });
 
             modelBuilder.Entity("ÇiçekDünyası.Domain.Entities.Order", b =>
