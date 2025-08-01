@@ -51,7 +51,7 @@ const PrivateRoute: React.FC<{ children: React.ReactNode; adminOnly?: boolean }>
 };
 
 const AppContent: React.FC = () => {
-  const { loading } = useAuth();
+  const { loading, user } = useAuth();
   const [contactOpen, setContactOpen] = useState(false);
 
   if (loading) {
@@ -61,6 +61,8 @@ const AppContent: React.FC = () => {
       </Box>
     );
   }
+
+  const isAdminRoute = window.location.pathname === '/admin';
 
   return (
     <Router>
@@ -102,7 +104,7 @@ const AppContent: React.FC = () => {
             <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
         </Box>
-        <Footer onContactClick={() => setContactOpen(true)} />
+        {!isAdminRoute && <Footer onContactClick={() => setContactOpen(true)} />}
         <Contact open={contactOpen} onClose={() => setContactOpen(false)} />
       </Box>
     </Router>

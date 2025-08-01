@@ -246,7 +246,11 @@ const ProductManagement: React.FC = () => {
                   </Typography>
                 </TableCell>
                 <TableCell>₺{flower.price.toFixed(2)}</TableCell>
-                <TableCell>{flower.stockQuantity}</TableCell>
+                <TableCell>
+                  <Typography variant="body2">
+                    {flower.stockQuantity}
+                  </Typography>
+                </TableCell>
                 <TableCell>
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                     <Typography
